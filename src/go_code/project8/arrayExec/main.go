@@ -45,4 +45,5 @@ func main(){
 		intArr3[len(intArr3)-i-1]=temp
 	}
 	fmt.Println(intArr3)
+	fmt.Println(intArr3)
 }
