@@ -11,6 +11,7 @@ func main() {
 	fmt.Println("intArr=", intArr)
 	fmt.Println("slice的元素是：", slice)
 	fmt.Println("slice的个数是：", len(slice))
-	fmt.Println("slice的容量是：", cap(slice))
+	fmt.Println("slice的容量是：", cap(slice))//切片容量可以动态变化
+	
 	
 }
