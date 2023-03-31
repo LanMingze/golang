@@ -2,14 +2,27 @@ package main
 
 import "fmt"
 
-type Person struct {
+type Student struct {
 	Name string
+	gender string
+	age int
+	id int
+	score float64
 }
-func test01(p Person){
-	fmt.Println(p.Name)
+func (student *Student)say()string{
+	infostr:=fmt.Sprintf("stu name=[%v],gender=[%v],age=[%v],id=[%v],score=[%v]",
+	student.Name,student.gender,student.age,student.id,student.score)
+	return infostr
 }
 
 func main() {
-	p:=Person{"tom"}
-	test01(p)
+	var stu=Student{
+		Name: "tom",
+		gender: "male",
+		age: 20,
+		id: 100,
+		score: 99.25,
+	}
+	str:=stu.say()
+	fmt.Println(str)
 }
