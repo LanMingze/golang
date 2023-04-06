@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("oo方式")
+	fmt.Println("面向对象方式")
 	utils.NewFamilyAccount().MainMenu()
 	
 }
