@@ -22,3 +22,29 @@ func NewCustomerService()*CustomerService{
 func (cs *CustomerService)List()[]model.Customer{
 	return cs.customer
 }
+func (cs *CustomerService)Add(customer model.Customer)bool{
+	cs.customerNum++
+	customer.Id=cs.customerNum
+	cs.customer=append(cs.customer, customer)
+	return true
+}
+//根据id查找切片中的位置
+func (cs *CustomerService)FindById(id int)int{
+	index:=-1
+	for i:=0;i<len(cs.customer);i++{
+		if cs.customer[i].Id==id{
+			index=i
+		}
+	}
+	return index
+}
+//根据id删除切片中的该位置customer
+func (cs *CustomerService)Delete(id int)bool{
+	index:=cs.FindById(id)
+	if index==-1{
+		return false
+	}else{
+		cs.customer=append(cs.customer[:index],cs.customer[index+1:]... )
+		return true
+	}
+}
