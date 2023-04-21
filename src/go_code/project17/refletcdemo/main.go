@@ -14,6 +14,9 @@ func reflectTest01(b interface{}) {
 	rVal:=reflect.ValueOf(b)
 	fmt.Println("rval=",rVal,rVal.Int()+2)
 	fmt.Printf("rval type=%T\n",rVal)
+
+	//获取变量对应的kind
+	fmt.Printf("kind=%v kind=%v\n",rVal.Kind(),rType.Kind())
 	//转为interface
 	iV:=rVal.Interface()
 	//将interface通过断言转为需要的类型
@@ -32,6 +35,9 @@ func reflectTest02(b interface{}) {
 	//获取到reflect.Value
 	rVal:=reflect.ValueOf(b)
 
+	//获取变量对应的kind
+	fmt.Printf("kind=%v kind=%v\n",rVal.Kind(),rType.Kind())
+	
 	//转为interface
 	iV:=rVal.Interface()
 	//将interface通过断言转为需要的类型
