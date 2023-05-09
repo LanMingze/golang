@@ -10,7 +10,7 @@ func process(conn net.Conn){
 	for{
 		//创建一个切片
 		buf:=make([]byte,1024)
-		fmt.Printf("服务器等待客户端%s发送消息\n",conn.RemoteAddr().String())
+		//fmt.Printf("服务器等待客户端%s发送消息\n",conn.RemoteAddr().String())
 		n,err:=conn.Read(buf)//不发信息会一直阻塞
 		if err!=nil{
 			fmt.Println(err)
